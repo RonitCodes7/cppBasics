@@ -1,2 +1,1 @@
-Enter your age:
-Your age is: 5
+a: 99 is larger
