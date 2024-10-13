@@ -98,9 +98,13 @@ int main()
     }
     Array ends*/
 
-    cout << passByValue(4,9) << endl;
-    int a = 4, b = 9;
-    cout << passByReference(&a, &b) << endl;
-    cout << a << endl;
+    // cout << passByValue(4,9) << endl;
+    // int a = 4, b = 9;
+    // cout << passByReference(&a, &b) << endl;
+    // cout << a << endl;
+
+    /* Patterns */
+        // Patterns are done on website only for advantage 
+    /* Patterns */
     return 0;
 }
