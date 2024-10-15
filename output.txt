@@ -1,1 +1,5 @@
-5 5 5 5 5 
+0 10 12 15 20 
+Sum is: 57
+No of time presemt is: 1
+abc acb bac bca cab cba 2020 15 12 10 0 512is the power of 2 to the power 9
+20 15 12 10 0 

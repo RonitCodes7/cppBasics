@@ -108,6 +108,163 @@ void explainQueue(){
     }
     cout << endl;
 }
+void explainPQ(){
+    // max heap
+    priority_queue<int>pq;
+    // min heap
+    // priority_queue<int, vector<int>, greater<int>>pq;
+    pq.push(10);
+    pq.push(12);
+    pq.push(9);
+    pq.push(13);
+
+    while(!pq.empty()){
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+    cout << endl;
+}
+void explainSet() {
+    set< int > st;
+    for(int i = 0; i < 5; i += 1){
+        // insert operation in a set
+        st.insert(i*10);
+    }
+    for(int i = 0; i < 6; i += 1){
+        // insert operation in a set
+        st.emplace(i*10);
+    }
+    // erase() : iterative way of removal an element from a set
+    set<int> :: iterator itr = st.end();
+    itr --;
+    itr --;
+    st.erase(itr);
+for(auto i : st){
+    cout << i << " ";
+}
+    // lower_bound and upper_bound
+    /*
+        lower_bound returns an iterator which points to a number
+        that is greater than equal to given number 
+
+        upper_bound returns an iterator which points to a number 
+        that is greater than given number 
+    */
+   auto it = st.upper_bound(70);
+   auto it2 = st.lower_bound(83);
+   if( it == st.end() || it2 == st.end()){
+    cout << "Bahir ho";
+   }
+   cout << *it << " " << *it2;
+}
+void explainMultiSet(){
+    /* 
+        Stores in ascending sorted order but have repeated elements
+
+        When find one exact element gives the first occurance of 
+        the number/char/string else return 0
+
+    */
+    multiset<int> ms;
+    for(int i = 0; i < 5; i += 1){
+        // insert operation in a set
+        ms.insert(i*10);
+    }
+    for(int i = 0; i < 6; i += 1){
+        // insert operation in a set
+        ms.emplace(i*10);
+    }
+    for(auto i : ms){
+    cout << i << " ";
+    }
+
+    auto it = ms.find(40);
+    cout << *it << " ";
+
+    cout << ms.count(40);
+}
+void explainMap(){
+    map<int, string> mp;
+    for(int i = 0; i < 10; i += 1){
+        mp.insert({ i, "abc"});
+    }
+    for(auto it: mp){
+        cout << it.first << ": " << it.second<< endl;
+    }
+    auto itr = mp.find(11);
+    cout << (*itr).second << " ";
+
+    if( itr == mp.end()){
+        cout << "Not found";
+    }
+}
+void explainUnorderedMap(){
+    unordered_map<int, string> mp;
+    for(int i = 0; i < 10; i += 1){
+        mp.insert({ i, "abc"});
+    }
+    for(auto it: mp){
+        cout << it.first << ": " << it.second<< endl;
+    }
+    auto itr = mp.find(0);
+    cout << (*itr).second << " ";
+
+    if( itr == mp.end()){
+        cout << "Not found";
+    }
+}
+void explainMultiMap(){
+    multimap<int, string> mmp;
+    mmp.insert({1, "abc"});
+     mmp.insert({1, "ebc"});
+      mmp.insert({1, "fbc"});
+       mmp.insert({2, "gbc"});
+        mmp.insert({1, "ibc"});
+         mmp.insert({2, "kbc"});
+          mmp.insert({1, "lbc"});
+     for(auto it: mmp){
+        cout << it.first << ": " << it.second<< endl;
+    }
+    auto it = mmp.equal_range(1);
+    for( auto i = it.first; i != it.second; i++){
+        cout << (*i).first << "->" << (*i).second<< endl;
+    }
+}
+bool comparator(int a,int b){
+    return a - b > 0 ? true : false;
+}
+void explainAlgoFunctions(){
+    vector<int> arr = { 20,10,0,15,12};
+    sort(arr.begin(), arr.end());
+    for(auto i : arr){
+        cout << i << " ";
+    }
+    cout << endl;
+    int sum = accumulate(arr.begin(), arr.end(), 0);
+    cout << "Sum is: " << sum << endl;;
+
+    int frequencies = count(arr.begin(), arr.end(), 12);
+    cout << "No of time presemt is: " << frequencies << endl;
+    string s = "abc";
+    do{
+        cout << s << " ";
+    }while(next_permutation(s.begin(), s.end()));
+
+   auto itr = max_element(arr.begin(), arr.end());
+
+   cout << *itr;
+
+   reverse(arr.begin(), arr.end());
+   for(auto i : arr){
+        cout << i << " ";
+    }
+ cout << pow(2,9) << "is the power of 2 to the power 9" << endl;
+
+ sort(arr.begin(), arr.end(), comparator);
+ for(auto i : arr){
+        cout << i << " ";
+    }
+}
 int main()
 {
     // cout << pow(2,9)
@@ -139,5 +296,12 @@ int main()
 
 //    explainStack(); // LIFO
 //    explainQueue(); // FIFO
+//    explainPQ() ;
+//    explainSet();
+//    explainMap();
+//   explainMultiSet();
+// explainUnorderedMap();
+// explainMultiMap();
+// explainAlgoFunctions();
     return 0;
 }
